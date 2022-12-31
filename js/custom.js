@@ -1,63 +1,63 @@
 
-//糖果屋
-setInterval(() => {
-    let create_time = Math.round(new Date('2022-12-10 00:00:00').getTime() / 1000); //在此行修改建站时间
-    let timestamp = Math.round((new Date().getTime()) / 1000);
-    let second = timestamp - create_time;
-    let time = new Array(0, 0, 0, 0, 0);
+// //糖果屋
+// setInterval(() => {
+//     let create_time = Math.round(new Date('2022-12-10 00:00:00').getTime() / 1000); //在此行修改建站时间
+//     let timestamp = Math.round((new Date().getTime()) / 1000);
+//     let second = timestamp - create_time;
+//     let time = new Array(0, 0, 0, 0, 0);
 
-    var nol = function(h){
-      return h>9?h:'0'+h;
-    }
-    if (second >= 365 * 24 * 3600) {
-      time[0] = parseInt(second / (365 * 24 * 3600));
-      second %= 365 * 24 * 3600;
-    }
-    if (second >= 24 * 3600) {
-      time[1] = parseInt(second / (24 * 3600));
-      second %= 24 * 3600;
-    }
-    if (second >= 3600) {
-      time[2] = nol(parseInt(second / 3600));
-      second %= 3600;
-    }
-    if (second >= 60) {
-      time[3] = nol(parseInt(second / 60));
-      second %= 60;
-    }
-    if (second > 0) {
-      time[4] = nol(second);
-    }
-    if ((Number(time[2])<22) && (Number(time[2])>7)){
-      // 缘梦阁 营业中
-      currentTimeHtml ="<img class='boardsign' src='https://img.shields.io/badge/%E7%BC%98%E6%A2%A6%E9%98%81-%E8%90%A5%E4%B8%9A%E4%B8%AD-%23fdd69b?style=social&logo=cakephp' title='距离百年老阁也就差不到一百年~'><div id='runtime'>" + time[0] + ' YEAR ' + time[1] + ' DAYS ' + time[2] + ' : ' + time[3] + ' : ' + time[4] + '</div>' ;
-    }
-    else{
-      // 缘梦阁 打烊了
-      currentTimeHtml ="<img class='boardsign' src='https://img.shields.io/badge/%E7%BC%98%E6%A2%A6%E9%98%81-%E6%89%93%E7%83%8A%E4%BA%86-%23fdd69b?style=social&logo=coffeescript' title='这个点了应该去睡觉啦，熬夜对身体不好哦'><div id='runtime'>" + time[0] + ' YEAR ' + time[1] + ' DAYS ' + time[2] + ' : ' + time[3] + ' : ' + time[4] + '</div>';
-    }
-    document.getElementById("workboard").innerHTML = currentTimeHtml;
-  }, 1000);
+//     var nol = function(h){
+//       return h>9?h:'0'+h;
+//     }
+//     if (second >= 365 * 24 * 3600) {
+//       time[0] = parseInt(second / (365 * 24 * 3600));
+//       second %= 365 * 24 * 3600;
+//     }
+//     if (second >= 24 * 3600) {
+//       time[1] = parseInt(second / (24 * 3600));
+//       second %= 24 * 3600;
+//     }
+//     if (second >= 3600) {
+//       time[2] = nol(parseInt(second / 3600));
+//       second %= 3600;
+//     }
+//     if (second >= 60) {
+//       time[3] = nol(parseInt(second / 60));
+//       second %= 60;
+//     }
+//     if (second > 0) {
+//       time[4] = nol(second);
+//     }
+//     if ((Number(time[2])<22) && (Number(time[2])>7)){
+//       // 缘梦阁 营业中
+//       currentTimeHtml ="<img class='boardsign' src='https://img.shields.io/badge/%E7%BC%98%E6%A2%A6%E9%98%81-%E8%90%A5%E4%B8%9A%E4%B8%AD-%23fdd69b?style=social&logo=cakephp' title='距离百年老阁也就差不到一百年~'><div id='runtime'>" + time[0] + ' YEAR ' + time[1] + ' DAYS ' + time[2] + ' : ' + time[3] + ' : ' + time[4] + '</div>' ;
+//     }
+//     else{
+//       // 缘梦阁 打烊了
+//       currentTimeHtml ="<img class='boardsign' src='https://img.shields.io/badge/%E7%BC%98%E6%A2%A6%E9%98%81-%E8%90%A5%E4%B8%9A%E4%B8%AD-%23fdd69b?style=social&logo=cakephp' title='这个点了应该去睡觉啦，熬夜对身体不好哦'><div id='runtime'>" + time[0] + ' YEAR ' + time[1] + ' DAYS ' + time[2] + ' : ' + time[3] + ' : ' + time[4] + '</div>';
+//     }
+//     document.getElementById("workboard").innerHTML = currentTimeHtml;
+//   }, 1000);
 
 
 
 //F小屋
-// var now = new Date;
+var now = new Date;
 
-// function createtime() {
-//     now.setTime(now.getTime() + 1e3);
-//     var e = new Date("08/01/2022 00:00:00"), t = Math.trunc(234e8 + (now - e) / 1e3 * 17), a = (t / 1496e5).toFixed(6),
-//         o = new Date("08/09/2022 00:00:00"), n = (now - o) / 1e3 / 60 / 60 / 24, r = Math.floor(n),
-//         i = (now - o) / 1e3 / 60 / 60 - 24 * r, s = Math.floor(i);
-//     1 == String(s).length && (s = "0" + s);
-//     var d = (now - o) / 1e3 / 60 - 1440 * r - 60 * s, l = Math.floor(d);
-//     1 == String(l).length && (l = "0" + l);
-//     var g = (now - o) / 1e3 - 86400 * r - 3600 * s - 60 * l, b = Math.round(g);
-//     1 == String(b).length && (b = "0" + b);
-//     let c = "";
-    // c = s < 18 && s >= 9 ? `<img class='boardsign' src='https://sourcebucket.s3.ladydaily.com/badge/F小屋-科研摸鱼中.svg' title='什么时候能够实现财富自由呀~'><br> <div style="font-size:13px;font-weight:bold">本站居然运行了 ${r} 天 ${s} 小时 ${l} 分 ${b} 秒 <i id="heartbeat" class='fas fa-heartbeat'></i> <br> 旅行者 1 号当前距离地球 ${t} 千米，约为 ${a} 个天文单位 🚀</div>` : `<img class='boardsign' src='https://sourcebucket.s3.ladydaily.com/badge/F小屋-下班休息啦.svg' title='下班了就该开开心心地玩耍~'><br> <div style="font-size:13px;font-weight:bold">本站居然运行了 ${r} 天 ${s} 小时 ${l} 分 ${b} 秒 <i id="heartbeat" class='fas fa-heartbeat'></i> <br> 旅行者 1 号当前距离地球 ${t} 千米，约为 ${a} 个天文单位 🚀</div>`, document.getElementById("workboard") && (document.getElementById("workboard").innerHTML = c)
-// }
+function createtime() {
+    now.setTime(now.getTime() + 1e3);
+    var e = new Date("08/01/2022 00:00:00"), t = Math.trunc(234e8 + (now - e) / 1e3 * 17), a = (t / 1496e5).toFixed(6),
+        o = new Date("08/09/2022 00:00:00"), n = (now - o) / 1e3 / 60 / 60 / 24, r = Math.floor(n),
+        i = (now - o) / 1e3 / 60 / 60 - 24 * r, s = Math.floor(i);
+    1 == String(s).length && (s = "0" + s);
+    var d = (now - o) / 1e3 / 60 - 1440 * r - 60 * s, l = Math.floor(d);
+    1 == String(l).length && (l = "0" + l);
+    var g = (now - o) / 1e3 - 86400 * r - 3600 * s - 60 * l, b = Math.round(g);
+    1 == String(b).length && (b = "0" + b);
+    let c = "";
+    c = s < 18 && s >= 9 ? `<img class='boardsign' src='https://img.shields.io/badge/%E7%BC%98%E6%A2%A6%E9%98%81-%E8%90%A5%E4%B8%9A%E4%B8%AD-%23fdd69b?style=social&logo=cakephp' title='什么时候能够实现财富自由呀~'><br> <div style="font-size:13px;font-weight:bold">本站居然运行了 ${r} 天 ${s} 小时 ${l} 分 ${b} 秒 <i id="heartbeat" class='fas fa-heartbeat'></i> <br> 旅行者 9 号当前距离地球 ${t} 千米，约为 ${a} 个天文单位 🚀</div>` : `<img class='boardsign' src='https://img.shields.io/badge/%E7%BC%98%E6%A2%A6%E9%98%81-%E8%90%A5%E4%B8%9A%E4%B8%AD-%23fdd69b?style=social&logo=cakephp' title='下班了就该开开心心地玩耍~'><br> <div style="font-size:13px;font-weight:bold">本站居然运行了 ${r} 天 ${s} 小时 ${l} 分 ${b} 秒 <i id="heartbeat" class='fas fa-heartbeat'></i> <br> 旅行者 1 号当前距离地球 ${t} 千米，约为 ${a} 个天文单位 🚀</div>`, document.getElementById("workboard") && (document.getElementById("workboard").innerHTML = c)
+}
 
-// setInterval((() => {
-//     createtime()
-// }), 1e3);
+setInterval((() => {
+    createtime()
+}), 1e3);

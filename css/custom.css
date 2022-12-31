@@ -418,3 +418,7 @@ h6::before {
   -webkit-animation: ccc 6s linear infinite;
   animation: ccc 6s linear infinite;
 }
+
+
+/* iconfont */
+@import "//at.alicdn.com/t/font_2264842_b004iy0kk2b.css";
